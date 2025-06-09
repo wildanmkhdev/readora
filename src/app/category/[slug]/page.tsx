@@ -41,7 +41,7 @@ const BookDetail: React.FC<BookDetailProps> = ({ slug }) => {
 				<p className="text-lg text-gray-600">by {book.author}</p>
 				<p className="mt-4 text-gray-700">{book.description}</p>
 			</div>
-		</div>
+		</div> 
 	);
 };
 
