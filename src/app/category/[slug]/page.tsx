@@ -1,22 +1,20 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; // new router hook in app dir
-import { useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { books, generateSlug, Book } from "../../db/book-populer";
 
-const BookDetail = () => {
-	const router = useRouter();
-	const params = useParams();
-	const slug = params?.slug;
+interface BookDetailProps {
+	slug: string;
+}
 
+const BookDetail: React.FC<BookDetailProps> = ({ slug }) => {
+	const router = useRouter();
 	const [book, setBook] = useState<Book | null>(null);
 
 	useEffect(() => {
-		if (slug) {
-			const found = books.find((b) => generateSlug(b.title) === slug);
-			setBook(found || null);
-		}
+		const found = books.find((b) => generateSlug(b.title) === slug);
+		setBook(found || null);
 	}, [slug]);
 
 	if (!book)
