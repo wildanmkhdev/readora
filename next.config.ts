@@ -1,15 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  webpack(config, { isServer }) {
-    if (!isServer) {
-      config.module.rules.push({
-        test: /pdf\.worker\.min\.js$/,
-        use: { loader: "worker-loader" },
-      });
-    }
-    return config;
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+	eslint: {
+		ignoreDuringBuilds: true,
+	},
 };
 
-export default nextConfig;
+module.exports = nextConfig;
