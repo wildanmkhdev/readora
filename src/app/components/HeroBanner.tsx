@@ -10,10 +10,10 @@ const HeroBanner: React.FC = () => {
 	};
 
 	return (
-		<section className="bg-gray-900 px-4 py-20 text-white sm:px-6 md:px-10 lg:px-24">
-			<div className="mx-auto max-w-6xl text-center space-y-8">
+		<section className="bg-gray-900 px-4 py-12 sm:py-16 md:py-20 text-white sm:px-6 md:px-10 lg:px-16">
+			<div className="mx-auto max-w-6xl text-center space-y-8 px-2">
 				{/* HEADLINE */}
-				<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+				<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight break-words">
 					<TrueFocus
 						sentence="Your Digital Library, Redefined"
 						blurAmount={4}
@@ -32,13 +32,13 @@ const HeroBanner: React.FC = () => {
 				</p>
 
 				{/* CTA BUTTONS */}
-				<div className="flex justify-center flex-nowrap gap-4 overflow-x-auto pt-4">
+				<div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 pt-4 w-full px-4">
 					<button
 						onClick={handleScroll}
-						className="whitespace-nowrap rounded-2xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700">
+						className="w-full sm:w-auto rounded-2xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700">
 						Start Reading
 					</button>
-					<button className="whitespace-nowrap rounded-2xl border border-white px-6 py-3 font-semibold text-white transition hover:bg-white/10">
+					<button className="w-full sm:w-auto rounded-2xl border border-white px-6 py-3 font-semibold text-white transition hover:bg-white/10">
 						Explore Collection
 					</button>
 				</div>
