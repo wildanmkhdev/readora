@@ -1,4 +1,6 @@
+// src/components/PopularBooks.tsx
 "use client";
+
 import React from "react";
 import Link from "next/link";
 import { books, generateSlug } from "../db/book-populer";
@@ -13,11 +15,11 @@ const PopularBooks: React.FC = () => {
 					<h2 className="text-center text-3xl font-bold lg:text-4xl">
 						Popular Books
 					</h2>
-					<a
+					<Link
 						href="/all-categories"
 						className="text-lg text-blue-400 hover:text-blue-300">
 						See All
-					</a>
+					</Link>
 				</div>
 
 				<div className="hide-scrollbar cursor-grab overflow-x-auto">
@@ -33,7 +35,7 @@ const PopularBooks: React.FC = () => {
 												alt={book.title}
 												className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
 											/>
-											<div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-40"></div>
+											<div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-40" />
 										</div>
 										<div className="absolute bottom-0 w-full p-4 text-white">
 											<h3 className="truncate text-lg font-semibold text-gray-100">
@@ -43,7 +45,7 @@ const PopularBooks: React.FC = () => {
 											<p className="mt-2 text-xs text-gray-300 line-clamp-3">
 												{book.description}
 											</p>
-											<div className="mt-2 h-0.5 w-0 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 group-hover:w-full"></div>
+											<div className="mt-2 h-0.5 w-0 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 group-hover:w-full" />
 										</div>
 									</div>
 								</Link>
