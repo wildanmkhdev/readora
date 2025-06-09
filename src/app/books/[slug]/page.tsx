@@ -1,18 +1,20 @@
 // src/app/books/[slug]/page.tsx
 import React from "react";
-import { books, generateSlug } from "../../db/book-populer";
 import { notFound } from "next/navigation";
+import { books, generateSlug } from "../../db/book-populer";
+
+interface Params {
+	slug: string;
+}
 
 interface PageProps {
-	params: { slug: string };
+	params: Params;
 }
 
 const BookDetailPage = ({ params }: PageProps) => {
 	const book = books.find((b) => generateSlug(b.title) === params.slug);
 
-	if (!book) {
-		notFound(); // Next.js built-in 404
-	}
+	if (!book) return notFound();
 
 	return (
 		<div className="min-h-screen bg-gray-100 px-6 py-16 text-gray-800">
