@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -101,10 +102,12 @@ const CategoryPage = () => {
 							msOverflowStyle: "none", // For Internet Explorer
 						}}>
 						{categories.map((category, index) => (
-							<div
+							<Link
+								href={`/category/${category.name
+									.toLowerCase()
+									.replace(/\s+/g, "-")}`}
 								key={index}
 								className="group relative w-64 flex-shrink-0 cursor-pointer overflow-hidden rounded-xl bg-gray-800 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:w-72">
-								{/* Image with gradient overlay */}
 								<div className="relative h-64 w-full overflow-hidden">
 									<div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-40"></div>
 									<img
@@ -112,20 +115,14 @@ const CategoryPage = () => {
 										alt={category.name}
 										className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
 									/>
-
-									{/* Hover effect - pulsing circle */}
 									<div className="absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-white opacity-0 transition-all duration-500 group-hover:h-20 group-hover:w-20 group-hover:opacity-10"></div>
 								</div>
-
-								{/* Content */}
 								<div className="absolute bottom-0 w-full p-5 text-white">
 									<h3 className="text-xl font-bold">{category.name}</h3>
 									<p className="mt-1 text-sm text-gray-300">{category.count}</p>
-
-									{/* Animated underline */}
 									<div className="mt-2 h-0.5 w-0 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 group-hover:w-full"></div>
 								</div>
-							</div>
+							</Link>
 						))}
 					</div>
 

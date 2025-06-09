@@ -4,7 +4,7 @@
 
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import books, { Book } from "../../db/books"; 
+import books, { Book } from "../../db/books";
 import { Star } from "lucide-react";
 
 const BookDetailPage = () => {
