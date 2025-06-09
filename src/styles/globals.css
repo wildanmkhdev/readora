@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* globals.css atau di file style umum kamu */
+.hide-scrollbar {
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* Internet Explorer & Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Opera */
+}
+.page {
+	width: 400px;
+	height: 600px;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-content {
+	padding: 10px;
+}
+.flipbook {
+	box-shadow: 0 0 8px #888;
+}
+
+.page {
+	width: 400px;
+	height: 300px;
+	line-height: 300px;
+	text-align: center;
+	font-size: 24px;
+	user-select: none;
+}
+.flipbook {
+	width: 400px;
+	height: 300px;
+}
+
+.flipbook .page {
+	background-color: white;
+	border: 1px solid #ccc;
+	width: 400px;
+	height: 300px;
+	line-height: 300px;
+	text-align: center;
+	font-size: 24px;
+	user-select: none;
+}
+
+/* Turn.js membutuhkan style berikut */
+.flipbook .page {
+	box-sizing: border-box;
+}
+
+.flipbook .page-wrapper {
+	float: left;
+	overflow: hidden;
+	position: relative;
+	width: 400px;
+	height: 300px;
+}
+
+.flipbook .turn-page {
+	position: absolute;
+	width: 400px;
+	height: 300px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
