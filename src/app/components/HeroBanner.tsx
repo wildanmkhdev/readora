@@ -12,7 +12,7 @@ const HeroBanner: React.FC = () => {
 
 	return (
 		<section className="bg-gray-900 px-4 py-12 sm:py-16 md:py-20 text-white sm:px-6 md:px-10 lg:px-16">
-			<Fade direction="down" duration={1000} cascade>
+			<Fade direction="up" duration={3000}>
 				<div className="mx-auto max-w-6xl text-center space-y-8 px-2">
 					{/* HEADLINE */}
 					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight break-words">
