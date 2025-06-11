@@ -5,6 +5,26 @@ import Link from "next/link";
 import { books, generateSlug } from "../db/book-populer";
 import { motion } from "framer-motion";
 
+// 🔧 Fungsi untuk generate harga dan diskon
+const generatePriceInfo = () => {
+	const isFree = Math.random() < 0.15;
+	if (isFree) {
+		return { price: "Gratis", discount: null, originalPrice: null };
+	}
+
+	const basePrice = Math.floor(Math.random() * 100000) + 20000;
+	const discountPercent = [0, 5, 10, 15, 20][Math.floor(Math.random() * 5)];
+	const discountedPrice = basePrice - (basePrice * discountPercent) / 100;
+
+	return {
+		price: `Rp${discountedPrice.toLocaleString("id-ID")}`,
+		originalPrice: discountPercent
+			? `Rp${basePrice.toLocaleString("id-ID")}`
+			: null,
+		discount: discountPercent ? `${discountPercent}%` : null,
+	};
+};
+
 const PopularBooks: React.FC = () => {
 	const containerVariant = {
 		hidden: {},
@@ -28,52 +48,77 @@ const PopularBooks: React.FC = () => {
 	};
 
 	return (
-		<section
-			className="bg-gray-900 px-6 py-16 text-white lg:px-24"
-			id="popular">
-			<div className="container mx-auto">
+		<section className="bg-gray-900 px-4 py-12 sm:px-6 lg:px-20 text-white">
+			<div className="mx-auto max-w-screen-xl">
 				<div className="mb-8 flex items-center justify-between">
-					<h2 className="text-center text-3xl font-bold lg:text-4xl">
-						Popular Books
+					<h2 className="text-xl font-bold sm:text-2xl md:text-3xl">
+						Rekomendasi untuk Anda
 					</h2>
 					<Link
 						href="/all-categories"
-						className="text-lg text-blue-400 hover:text-blue-300">
-						See All
+						className="text-sm text-blue-400 hover:underline sm:text-base">
+						Lihat semua
 					</Link>
 				</div>
 
-				<div className="hide-scrollbar cursor-grab overflow-x-auto">
+				<div className="hide-scrollbar overflow-x-auto">
 					<motion.div
-						className="flex space-x-6 lg:space-x-12"
+						className="flex gap-4 sm:gap-6 md:gap-8"
 						variants={containerVariant}
 						initial="hidden"
 						whileInView="show"
-						viewport={{ once: true, amount: 0.2 }} // 👈 hanya muncul saat scroll pertama kali
-					>
+						viewport={{ once: true, amount: 0.2 }}>
 						{books.map((book, index) => {
 							const slug = generateSlug(book.title);
+							const { price, originalPrice, discount } = generatePriceInfo();
+							const views = Math.floor(Math.random() * 1000) + 100;
+
 							return (
 								<motion.div key={index} variants={cardVariant}>
 									<Link href={`/books/${slug}`}>
-										<div className="group relative w-60 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-											<div className="relative h-48 w-full overflow-hidden">
+										<div className="relative w-40 flex-shrink-0 overflow-hidden rounded-lg border border-gray-700 bg-gray-800 shadow transition-all duration-300 hover:shadow-lg sm:w-48 md:w-56">
+											<div className="relative h-56 w-full overflow-hidden">
 												<img
 													src={book.img}
 													alt={book.title}
-													className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+													className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
 												/>
-												<div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-40" />
+												{discount && (
+													<span className="absolute left-0 top-0 m-2 rounded bg-red-500 px-2 py-1 text-xs font-semibold text-white">
+														Diskon {discount}
+													</span>
+												)}
 											</div>
-											<div className="absolute bottom-0 w-full p-4 text-white">
-												<h3 className="truncate text-lg font-semibold text-gray-100">
+											<div className="p-3 text-sm text-white">
+												<h3 className="line-clamp-2 font-semibold text-white">
 													{book.title}
 												</h3>
-												<p className="text-sm text-gray-400">{book.author}</p>
-												<p className="mt-2 text-xs text-gray-300 line-clamp-3">
-													{book.description}
-												</p>
-												<div className="mt-2 h-0.5 w-0 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 group-hover:w-full" />
+												<p className="text-xs text-gray-400">{book.author}</p>
+
+												{/* Harga */}
+												<div className="mt-2">
+													{price === "Gratis" ? (
+														<span className="rounded bg-green-600 px-2 py-1 text-xs font-semibold text-white">
+															Gratis
+														</span>
+													) : (
+														<div className="text-sm">
+															{originalPrice && (
+																<span className="mr-2 text-xs text-gray-500 line-through">
+																	{originalPrice}
+																</span>
+															)}
+															<span className="font-medium text-white">
+																{price}
+															</span>
+														</div>
+													)}
+												</div>
+
+												{/* View count */}
+												<div className="mt-1 flex items-center gap-1 text-xs text-gray-400">
+													👁️ {views}
+												</div>
 											</div>
 										</div>
 									</Link>
