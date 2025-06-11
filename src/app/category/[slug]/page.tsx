@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useParams } from "next/navigation";
-import books from "../../db/all-db"; // Ubah path sesuai struktur proyekmu
+import books from "../../db/books"; // Ganti sesuai path
 import { Star } from "lucide-react";
 import Link from "next/link";
 
@@ -64,7 +64,7 @@ const CategoryBookList: React.FC = () => {
 
 	return (
 		<div className="min-h-screen bg-gray-900 p-4">
-			<div className="mx-auto max-w-screen-2xl">
+			<div className="mx-auto max-w-screen-xl">
 				<h1 className="mb-4 text-xl font-bold text-white capitalize">
 					{genre} Books
 				</h1>
@@ -72,13 +72,13 @@ const CategoryBookList: React.FC = () => {
 				{filteredBooks.length === 0 ? (
 					<p className="text-gray-400">Tidak ada buku dalam kategori ini.</p>
 				) : (
-					<div className="grid grid-cols-5 gap-2 sm:gap-3 md:gap-4">
+					<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
 						{filteredBooks.map((book) => (
 							<Link
 								key={book.id}
 								href={`/deksripsi-product/${book.id}`}
 								className="block">
-								<div className="cursor-pointer overflow-hidden rounded-md bg-gray-800 p-2 shadow-md transition-all hover:shadow-lg">
+								<div className="cursor-pointer overflow-hidden rounded-md bg-gray-800 p-2 shadow-sm transition-all hover:shadow-md">
 									<div className="aspect-[3/4] overflow-hidden rounded">
 										<img
 											src={book.coverImage}
