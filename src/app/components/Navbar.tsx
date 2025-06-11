@@ -86,7 +86,7 @@ export default function Navbar() {
 					{/* Logo */}
 					<div className="flex items-center">
 						<Link href="/">
-							<span className="text-2.5xl font-bold text-white cursor-pointer">
+							<span className="text-3xl font-bold text-white cursor-pointer">
 								Readdora
 							</span>
 						</Link>
