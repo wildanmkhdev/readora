@@ -3,6 +3,8 @@ import { ReactNode } from "react"; // Import untuk children props
 import Navbar from "./components/Navbar"; // Import komponen Navbar
 import Footed from "./components/Footed"; // Import komponen Footer
 import "../styles/globals.css";
+import Head from "next/head";
+import Script from "next/script";
 
 export const metadata = {
 	title: {
@@ -37,27 +39,36 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang="id">
-			<style>
-				@import
-				url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Spray+Paint&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-			</style>
+			<Head>
+				<link
+					href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Spray+Paint&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+					rel="stylesheet"
+				/>
+			</Head>
+
 			<body>
 				<Navbar /> {/* Navbar yang akan selalu ada */}
-				<script type="text/javascript">
-    window.mychat = window.mychat || {};
-    window.mychat.server = 'https://live.cekat.ai/widget.js';
-    window.mychat.iframeWidth = '400px';
-    window.mychat.iframeHeight = '700px';
-    window.mychat.accessKey = 'Dora-BpcTEilV';
-    (function() {
+				<Script
+					id="chat-widget"
+					strategy="afterInteractive"
+					dangerouslySetInnerHTML={{
+						__html: `
+      window.mychat = window.mychat || {};
+      window.mychat.server = 'https://live.cekat.ai/widget.js';
+      window.mychat.iframeWidth = '400px';
+      window.mychat.iframeHeight = '700px';
+      window.mychat.accessKey = 'Dora-BpcTEilV';
+      (function() {
         var mychat = document.createElement('script');
         mychat.type = 'text/javascript';
         mychat.async = true;
         mychat.src = window.mychat.server;
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(mychat, s);
-    })();
-</script>
+      })();
+    `,
+					}}
+				/>
 				<main>{children}</main> {/* Tempat konten halaman akan diganti */}
 				<Footed /> {/* Footer yang akan selalu ada */}
 			</body>
