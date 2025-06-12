@@ -3,8 +3,8 @@ import React from "react";
 import HeroBanner from "./components/HeroBanner";
 import CategoryPage from "./components/CategoryBook";
 import PopularBooks from "./components/PageBook";
-import Text from "./components/Text";
 import Novel from "./components/Novel";
+import FAQ from "./components/Faq";
 
 const page = () => {
 	return (
@@ -13,6 +13,7 @@ const page = () => {
 			<PopularBooks></PopularBooks>
 			<Novel></Novel>
 			<CategoryPage></CategoryPage>
+			<FAQ></FAQ>
 		</div>
 	);
 };
