@@ -56,7 +56,7 @@ export default function FAQ() {
 				viewport={{ once: true }}
 				className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
 				<h2 className="text-2xl md:text-3xl font-bold text-center pt-10 pb-6 text-purple-400">
-					Pertanyaan Seputar Pembelian & Akses Cerita
+					Pertanyaan Yang Sering Diajukan (FAQ)
 				</h2>
 				<div className="space-y-2">
 					{dataFAQ.map((item, index) => (

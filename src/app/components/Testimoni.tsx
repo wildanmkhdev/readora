@@ -1,82 +1,91 @@
-import React from "react";
+"use client";
+import { useEffect, useState } from "react";
 
-const TestimonialPage: React.FC = () => {
-  const testimonials = [
-    {
-      name: "John Doe",
-      image: "https://randomuser.me/api/portraits/men/1.jpg",
-      text: "Toko buku ini memiliki koleksi buku yang luar biasa. Saya suka menjelajah dan menemukan bacaan yang menarik!",
-    },
-    {
-      name: "Jane Smith",
-      image: "https://randomuser.me/api/portraits/women/1.jpg",
-      text: "Pilihan bukunya fantastis! Pelayanan pelanggan yang hebat dan navigasi situs yang mudah.",
-    },
-    {
-      name: "Mike Johnson",
-      image: "https://randomuser.me/api/portraits/men/2.jpg",
-      text: "Saya telah menemukan beberapa buku favorit saya di sini, dan pengirimannya sangat cepat. Sangat merekomendasikan!",
-    },
-    {
-      name: "Emily Davis",
-      image: "https://randomuser.me/api/portraits/women/2.jpg",
-      text: "Tempat yang luar biasa untuk berbelanja buku! Saya suka variasi dan rekomendasi yang mereka tawarkan.",
-    },
-  ];
-
-  return (
-    <section className="bg-gray-900 px-6 py-16 text-white lg:px-24">
-      <h2 className="sm:text-1xl mb-8 text-center text-2xl font-bold lg:text-4xl">
-        What`s Costumer Say ?
-      </h2>
-      <div className="overflow-hidden">
-        <div className="animate-marquee flex space-x-6">
-          {/* Kontainer pertama untuk kartu */}
-          <div className="flex space-x-6">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="w-80 flex-shrink-0 overflow-hidden rounded-lg bg-gray-800 p-4 shadow-lg"
-              >
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="mx-auto h-16 w-16 rounded-full"
-                />
-                <div className="mt-4 text-center">
-                  <p className="text-sm font-semibold">{testimonial.name}</p>
-                  <p className="mt-2 text-gray-300 italic">
-                    "{testimonial.text}"
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          {/* Kontainer duplikat untuk scrolling tak terbatas */}
-          <div className="flex space-x-6">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="w-80 flex-shrink-0 overflow-hidden rounded-lg bg-gray-800 p-4 shadow-lg"
-              >
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="mx-auto h-16 w-16 rounded-full"
-                />
-                <div className="mt-4 text-center">
-                  <p className="text-sm font-semibold">{testimonial.name}</p>
-                  <p className="mt-2 text-gray-300 italic">
-                    "{testimonial.text}"
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+type Testimoni = {
+	user: string;
+	komentar: string;
+	waktu: string;
+	foto: string;
 };
 
-export default TestimonialPage;
+const sampleData: Testimoni[] = [
+	{
+		user: "Alya",
+		komentar: "Cerita di Readora sangat menarik dan bikin nagih!",
+		waktu: "2 jam lalu",
+		foto: "https://randomuser.me/api/portraits/women/79.jpg",
+	},
+	{
+		user: "Rizky",
+		komentar: "Fitur premiumnya worth it banget!",
+		waktu: "Kemarin",
+		foto: "https://randomuser.me/api/portraits/men/45.jpg",
+	},
+	{
+		user: "Lina",
+		komentar: "Akhirnya bisa baca cerita favoritku tanpa gangguan.",
+		waktu: "3 hari lalu",
+		foto: "https://randomuser.me/api/portraits/women/55.jpg",
+	},
+	{
+		user: "Dimas",
+		komentar: "UI-nya bersih dan mudah digunakan!",
+		waktu: "5 menit lalu",
+		foto: "https://randomuser.me/api/portraits/men/21.jpg",
+	},
+	{
+		user: "Sarah",
+		komentar: "Aku suka sistem koinnya, gampang dipakai.",
+		waktu: "Baru saja",
+		foto: "https://randomuser.me/api/portraits/women/29.jpg",
+	},
+	{
+		user: "Fajar",
+		komentar: "Bisa baca offline juga? Mantap!",
+		waktu: "1 jam lalu",
+		foto: "https://randomuser.me/api/portraits/men/11.jpg",
+	},
+];
+
+export default function Testimonials() {
+	const [testimoni, setTestimoni] = useState<Testimoni[]>([]);
+
+	useEffect(() => {
+		// Gandakan agar animasi scroll jadi panjang
+		setTestimoni([...sampleData, ...sampleData]);
+	}, []);
+
+	return (
+		<section className="bg-gray-900 py-10 overflow-hidden">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+				<h2 className="text-xl md:text-2xl font-bold text-purple-400 text-center mb-6">
+					Apa Kata Pengguna Readora ?
+				</h2>
+
+				<div className="relative w-full overflow-hidden">
+					<div className="flex animate-scroll space-x-6">
+						{testimoni.map((item, index) => (
+							<div
+								key={index}
+								className="min-w-max bg-gray-800 rounded-xl p-4 text-white shadow-md w-56">
+								<div className="flex justify-center mb-3">
+									<img
+										src={item.foto}
+										alt={item.user}
+										className="w-12 h-12 rounded-full object-cover border-2 border-purple-400"
+									/>
+								</div>
+								<p className="italic text-sm text-center text-gray-300">
+									"{item.komentar}"
+								</p>
+								<div className="mt-3 text-xs text-center text-purple-300">
+									- {item.user}, {item.waktu}
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+}

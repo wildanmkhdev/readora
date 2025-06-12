@@ -5,6 +5,8 @@ import CategoryPage from "./components/CategoryBook";
 import PopularBooks from "./components/PageBook";
 import Novel from "./components/Novel";
 import FAQ from "./components/Faq";
+import Testimonials from "./components/Testimoni";
+import ContactUs from "./components/ContactUs";
 
 const page = () => {
 	return (
@@ -14,6 +16,9 @@ const page = () => {
 			<Novel></Novel>
 			<CategoryPage></CategoryPage>
 			<FAQ></FAQ>
+
+			<Testimonials></Testimonials>
+			<ContactUs></ContactUs>
 		</div>
 	);
 };

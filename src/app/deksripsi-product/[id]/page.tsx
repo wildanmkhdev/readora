@@ -93,7 +93,9 @@ const BookDetailPage = () => {
 					</div>
 
 					<a
-						href={book.purchaseUrl}
+						href={`https://wa.me/6281573810039?text=${encodeURIComponent(
+							`Halo, saya penasaran dengan buku "${book.title}". Boleh minta info lebih lanjut? Di mana saya bisa membeli buku ini, dan apakah masih tersedia?`
+						)}`}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="inline-block mt-4 px-6 py-2 bg-green-500 text-white text-sm font-medium rounded hover:bg-green-600 transition">
