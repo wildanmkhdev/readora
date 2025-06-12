@@ -31,12 +31,12 @@ const PopularBooks: React.FC = () => {
 		<section className="bg-gray-900 px-4 py-12 sm:px-6 lg:px-20 text-white">
 			<div className="mx-auto max-w-screen-xl">
 				<div className="mb-8 flex items-center justify-between">
-					<h2 className="text-xl font-bold sm:text-2xl md:text-3xl">
+					<h2 className="text-xl font-bold sm:text-2xl md:text-3xl text-nowrap">
 						Rekomendasi untuk Anda
 					</h2>
 					<Link
 						href="/all-categories"
-						className="text-sm text-blue-400 hover:underline sm:text-base">
+						className="text-sm text-blue-400 hover:underline sm:text-base text-nowrap">
 						Lihat semua
 					</Link>
 				</div>
