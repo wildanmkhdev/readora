@@ -54,18 +54,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 					dangerouslySetInnerHTML={{
 						__html: `
       window.mychat = window.mychat || {};
-      window.mychat.server = 'https://live.cekat.ai/widget.js';
-      window.mychat.iframeWidth = '400px';
-      window.mychat.iframeHeight = '700px';
-      window.mychat.accessKey = 'Dora-BpcTEilV';
-      (function() {
-        var mychat = document.createElement('script');
-        mychat.type = 'text/javascript';
-        mychat.async = true;
-        mychat.src = window.mychat.server;
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(mychat, s);
-      })();
+                          window.mychat.server = 'https://live.cekat.ai/widget.js';
+                          window.mychat.iframeWidth = '400px';
+                          window.mychat.iframeHeight = '700px';
+                          window.mychat.accessKey = 'Readdora-IETmfjiY';
+                          (function() {
+                              var mychat = document.createElement('script');
+                              mychat.type = 'text/javascript';
+                              mychat.async = true;
+                              mychat.src = window.mychat.server;
+                              var s = document.getElementsByTagName('script')[0];
+                              s.parentNode.insertBefore(mychat, s);
+                          })();
     `,
 					}}
 				/>
