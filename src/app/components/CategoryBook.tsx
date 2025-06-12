@@ -9,47 +9,47 @@ const CategoryPage = () => {
 
 	const categories = [
 		{
-			name: "Fiction",
+			name: "Fiksi",
 			img: "https://i.pinimg.com/736x/50/aa/55/50aa55edd04a3096c10ec61cd0496e7d.jpg",
 			count: "320 books",
 		},
 		{
-			name: "Non-Fiction",
+			name: "No-fiksi",
 			img: "https://i.pinimg.com/736x/aa/36/76/aa36763b11782f44ac990be57977e540.jpg",
 			count: "245 books",
 		},
 		{
-			name: "Education",
+			name: "Edukasi",
 			img: "https://i.pinimg.com/736x/87/8d/3b/878d3b86d73a524727e80b85250d677e.jpg",
 			count: "189 books",
 		},
 		{
-			name: "Technology",
+			name: "Teknologi",
 			img: "https://i.pinimg.com/736x/12/c3/ff/12c3ff6753c6760a42266a0129aa0fd3.jpg",
 			count: "156 books",
 		},
 		{
-			name: "Science",
+			name: "Sains",
 			img: "https://i.pinimg.com/736x/54/00/5c/54005c3cf5b59c112d4063f65f8b1703.jpg",
 			count: "203 books",
 		},
 		{
-			name: "History",
+			name: "Sejarah",
 			img: "https://i.pinimg.com/736x/0c/da/5d/0cda5dfd800186df464653691b5d75a9.jpg",
 			count: "142 books",
 		},
 		{
-			name: "Biography",
+			name: "Biografi",
 			img: "https://i.pinimg.com/736x/b4/d8/96/b4d8961b110643ff748a0fbd471b540b.jpg",
 			count: "98 books",
 		},
 		{
-			name: "Fantasy",
+			name: "Fantasi",
 			img: "https://i.pinimg.com/736x/b3/0f/b3/b30fb38ed1b71cc2feb2da6699c6770a.jpg",
 			count: "175 books",
 		},
 		{
-			name: "Romance",
+			name: "Romantis",
 			img: "https://i.pinimg.com/736x/b9/51/44/b95144e212355e9f9ed6e31274a533b2.jpg",
 			count: "210 books",
 		},
@@ -67,10 +67,10 @@ const CategoryPage = () => {
 		<section className="relative :dark bg-gray-900 px-4 py-16 text-white md:px-8 lg:px-16">
 			<div className="container mx-auto">
 				<div className="mb-10 flex flex-col items-center justify-between gap-4 md:flex-row">
-					<h2 className="text-center text-3xl font-bold md:text-left lg:text-4xl">
-						Discover Books by{" "}
+					<h2 className="text-center text-2xl font-bold md:text-left lg:text-3xl">
+						Buku Berdasarkan{" "}
 						<span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-							Category
+							Kategori
 						</span>
 					</h2>
 

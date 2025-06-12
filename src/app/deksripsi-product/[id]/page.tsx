@@ -79,10 +79,7 @@ const BookDetailPage = () => {
 						<span className="text-xs ml-1 text-gray-300">{book.rating}</span>
 					</div>
 					<p className="text-lg font-semibold text-yellow-400">
-						{new Intl.NumberFormat("id-ID", {
-							style: "currency",
-							currency: "IDR",
-						}).format(book.price)}
+						Rp {book.price.toLocaleString("id-ID")}
 					</p>
 
 					<div>

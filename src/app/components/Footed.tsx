@@ -49,8 +49,7 @@ const Footed: React.FC = () => {
               <span className="text-xl font-bold text-white">Readdora</span>
             </div>
             <p className="pr-4 text-sm text-gray-400">
-              Your premier destination for digital books and reading
-              experiences.
+              Tujuan utama Anda untuk buku digital dan pengalaman membaca
             </p>
           </div>
 

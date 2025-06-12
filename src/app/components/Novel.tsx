@@ -2,10 +2,10 @@
 
 import React from "react";
 import Link from "next/link";
-import { books } from "../db/book-populer";
+import { books } from "../db/db-novel";
 import { motion } from "framer-motion";
 
-const PopularBooks: React.FC = () => {
+const Novel: React.FC = () => {
 	const containerVariant = {
 		hidden: {},
 		show: {
@@ -32,13 +32,8 @@ const PopularBooks: React.FC = () => {
 			<div className="mx-auto max-w-screen-xl">
 				<div className="mb-8 flex items-center justify-between">
 					<h2 className="text-xl font-bold sm:text-2xl md:text-3xl">
-						Rekomendasi untuk Anda
+						Novel & Fiksi
 					</h2>
-					<Link
-						href="/all-categories"
-						className="text-sm text-blue-400 hover:underline sm:text-base">
-						Lihat semua
-					</Link>
 				</div>
 
 				<div className="hide-scrollbar overflow-x-auto lg:overflow-x-visible">
@@ -62,9 +57,6 @@ const PopularBooks: React.FC = () => {
 													alt={book.title}
 													className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
 												/>
-												<span className="absolute top-0 left-0 m-2 rounded bg-red-600 px-2 py-1 text-xs font-semibold text-white">
-													🔥 Hot Seller
-												</span>
 											</div>
 
 											{/* CONTENT */}
@@ -93,4 +85,4 @@ const PopularBooks: React.FC = () => {
 	);
 };
 
-export default PopularBooks;
+export default Novel;

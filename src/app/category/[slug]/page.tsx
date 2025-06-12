@@ -66,7 +66,7 @@ const CategoryBookList: React.FC = () => {
 		<div className="min-h-screen bg-gray-900 p-4">
 			<div className="mx-auto max-w-screen-xl">
 				<h1 className="mb-4 text-xl font-bold text-white capitalize">
-					{genre} Books
+					{genre}
 				</h1>
 
 				{filteredBooks.length === 0 ? (

@@ -25,7 +25,7 @@ const HeroBanner: React.FC = () => {
 					transition={{ delay: 0.2, duration: 1 }}
 					className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight break-words">
 					<TrueFocus
-						sentence="Your Digital Library, Redefined"
+						sentence="Baca Tanpa Batas, Kapan Aja!"
 						blurAmount={4}
 						borderColor="#3b82f6"
 						glowColor="rgba(59, 130, 246, 0.6)"
@@ -40,9 +40,8 @@ const HeroBanner: React.FC = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: 0.5, duration: 1 }}
 					className="text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto px-2">
-					Access a world of knowledge at your fingertips. BookVerse offers a
-					curated collection of ebooks for every interest — all in one seamless
-					platform.
+					Ribuan eBook siap dibaca di genggamanmu. Temukan cerita, ilmu, dan
+					inspirasi hanya di Readoora.
 				</motion.p>
 
 				{/* CTA BUTTONS */}
@@ -54,10 +53,10 @@ const HeroBanner: React.FC = () => {
 					<button
 						onClick={handleScroll}
 						className="w-full sm:w-auto rounded-2xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700">
-						Start Reading
+						Mulai Membaca
 					</button>
 					<button className="w-full sm:w-auto rounded-2xl border border-white px-6 py-3 font-semibold text-white transition hover:bg-white/10">
-						Explore Collection
+						Jelajahi Koleksi
 					</button>
 				</motion.div>
 			</motion.div>
