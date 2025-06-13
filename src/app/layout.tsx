@@ -3,7 +3,7 @@ import { ReactNode } from "react"; // Import untuk children props
 import Navbar from "./components/Navbar"; // Import komponen Navbar
 import Footed from "./components/Footed"; // Import komponen Footer
 import "../styles/globals.css";
-import Head from "next/head";
+// import Head from "next/head";
 import Script from "next/script";
 
 export const metadata = {
@@ -12,13 +12,13 @@ export const metadata = {
 		template: "%s | Readoora",
 	},
 	description:
-		"Readoora adalah platform buku digital terbaik untuk menemukan dan membeli buku favoritmu dengan mudah.",
-	keywords: ["buku", "ebook", "toko buku", "buku digital", "readoora"],
-	authors: [{ name: "Readoora Team", url: "https://readoora.com" }],
+		"Readdora adalah platform buku digital terbaik untuk menemukan dan membeli buku favoritmu dengan mudah.",
+	keywords: ["buku", "ebook", "toko buku", "buku digital", "readdora"],
+	authors: [{ name: "Readoora Team", url: "https://readdora.web.id" }],
 	creator: "Readoora",
 	metadataBase: new URL("https://readdora.web.id"),
 	openGraph: {
-		title: "Readoora - Toko Buku Online",
+		title: "Readdora - Toko Buku Online",
 		description: "Temukan buku terbaik dan ebook favoritmu di Readoora.",
 		url: "https://readdora.web.id",
 		siteName: "Readdora",
