@@ -11,47 +11,47 @@ const CategoryPage = () => {
 		{
 			name: "Fiksi",
 			img: "https://i.pinimg.com/736x/50/aa/55/50aa55edd04a3096c10ec61cd0496e7d.jpg",
-			count: "320 books",
+			count: "320 buku",
 		},
 		{
 			name: "No-fiksi",
 			img: "https://i.pinimg.com/736x/aa/36/76/aa36763b11782f44ac990be57977e540.jpg",
-			count: "245 books",
+			count: "245 buku",
 		},
 		{
 			name: "Edukasi",
 			img: "https://i.pinimg.com/736x/87/8d/3b/878d3b86d73a524727e80b85250d677e.jpg",
-			count: "189 books",
+			count: "189 buku",
 		},
 		{
 			name: "Teknologi",
 			img: "https://i.pinimg.com/736x/12/c3/ff/12c3ff6753c6760a42266a0129aa0fd3.jpg",
-			count: "156 books",
+			count: "156 buku",
 		},
 		{
 			name: "Sains",
 			img: "https://i.pinimg.com/736x/54/00/5c/54005c3cf5b59c112d4063f65f8b1703.jpg",
-			count: "203 books",
+			count: "203 buku",
 		},
 		{
 			name: "Sejarah",
 			img: "https://i.pinimg.com/736x/0c/da/5d/0cda5dfd800186df464653691b5d75a9.jpg",
-			count: "142 books",
+			count: "142 buku",
 		},
 		{
 			name: "Biografi",
 			img: "https://i.pinimg.com/736x/b4/d8/96/b4d8961b110643ff748a0fbd471b540b.jpg",
-			count: "98 books",
+			count: "98 buku",
 		},
 		{
 			name: "Fantasi",
 			img: "https://i.pinimg.com/736x/b3/0f/b3/b30fb38ed1b71cc2feb2da6699c6770a.jpg",
-			count: "175 books",
+			count: "175 buku",
 		},
 		{
 			name: "Romantis",
 			img: "https://i.pinimg.com/736x/b9/51/44/b95144e212355e9f9ed6e31274a533b2.jpg",
-			count: "210 books",
+			count: "210 buku",
 		},
 	];
 
