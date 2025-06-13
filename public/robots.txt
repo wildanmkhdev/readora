@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.readdora.web.id
+
+# Sitemaps
+Sitemap: https://www.readdora.web.id/sitemap.xml
