@@ -4,7 +4,7 @@ import React from "react";
 import { useSearchParams } from "next/navigation";
 import { Star } from "lucide-react";
 import Link from "next/link";
-import books from "../db/books"; // pastikan path-nya benar
+import books from "../db/books"; 
 
 interface Book {
 	id: number;
