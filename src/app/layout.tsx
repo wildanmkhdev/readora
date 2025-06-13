@@ -8,18 +8,18 @@ import Script from "next/script";
 
 export const metadata = {
 	title: {
-		default: "Readoora - Toko Buku Online",
-		template: "%s | Readoora",
+		default: "Readdora - Toko Buku Online",
+		template: "%s | Readdora",
 	},
 	description:
 		"Readdora adalah platform buku digital terbaik untuk menemukan dan membeli buku favoritmu dengan mudah.",
 	keywords: ["buku", "ebook", "toko buku", "buku digital", "readdora"],
-	authors: [{ name: "Readoora Team", url: "https://readdora.web.id" }],
-	creator: "Readoora",
+	authors: [{ name: "Readdora Team", url: "https://readdora.web.id" }],
+	creator: "Readdora",
 	metadataBase: new URL("https://readdora.web.id"),
 	openGraph: {
 		title: "Readdora - Toko Buku Online",
-		description: "Temukan buku terbaik dan ebook favoritmu di Readoora.",
+		description: "Temukan buku terbaik dan ebook favoritmu di Readdora.",
 		url: "https://readdora.web.id",
 		siteName: "Readdora",
 		locale: "id_ID",
