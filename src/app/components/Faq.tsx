@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react"; // Icon panah
+import { ChevronDown } from "lucide-react";
 
 type FAQItem = {
 	pertanyaan: string;
@@ -41,6 +41,20 @@ const dataFAQ: FAQItem[] = [
 	},
 ];
 
+const containerVariants = {
+	hidden: {},
+	visible: {
+		transition: {
+			staggerChildren: 0.1,
+		},
+	},
+};
+
+const itemVariants = {
+	hidden: { opacity: 0, y: 20 },
+	visible: { opacity: 1, y: 0 },
+};
+
 export default function FAQ() {
 	const [terbuka, setTerbuka] = useState<number | null>(null);
 
@@ -51,10 +65,10 @@ export default function FAQ() {
 	return (
 		<section className="bg-gray-900 text-white w-full px-4 md:px-6 py-0">
 			<motion.div
-				initial={{ opacity: 0, y: 50 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.6, ease: "easeOut" }}
-				viewport={{ once: true }}
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: true, amount: 0.2 }}
+				variants={containerVariants}
 				className="max-w-3xl mx-auto">
 				<h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-purple-400">
 					Pertanyaan Yang Sering Diajukan (FAQ)
@@ -62,36 +76,39 @@ export default function FAQ() {
 				<div className="space-y-3">
 					{dataFAQ.map((item, index) => {
 						const isOpen = terbuka === index;
+
 						return (
-							<div
+							<motion.div
+								variants={itemVariants}
 								key={index}
+								layout
 								className="border border-gray-700 rounded-xl overflow-hidden bg-gray-800">
 								<button
 									onClick={() => toggle(index)}
 									className="w-full flex justify-between items-center px-5 py-4 text-left text-sm md:text-base font-medium transition hover:bg-gray-700">
-									<span className="text-white">{item.pertanyaan}</span>
+									<span>{item.pertanyaan}</span>
 									<motion.div
 										animate={{ rotate: isOpen ? 180 : 0 }}
 										transition={{ duration: 0.3 }}>
-										<ChevronDown className="text-white w-5 h-5" />
+										<ChevronDown className="w-5 h-5" />
 									</motion.div>
 								</button>
-								<AnimatePresence>
+
+								<AnimatePresence initial={false}>
 									{isOpen && (
 										<motion.div
-											key="content"
-											initial={{ height: 0, opacity: 0 }}
-											animate={{ height: "auto", opacity: 1 }}
-											exit={{ height: 0, opacity: 0 }}
-											transition={{ duration: 0.3, ease: "easeInOut" }}
-											className="px-5 pb-4">
+											initial={{ opacity: 0, height: 0 }}
+											animate={{ opacity: 1, height: "auto" }}
+											exit={{ opacity: 0, height: 0 }}
+											transition={{ duration: 0.35, ease: "easeInOut" }}
+											className="px-5 pb-4 overflow-hidden">
 											<p className="text-sm md:text-base text-gray-300">
 												{item.jawaban}
 											</p>
 										</motion.div>
 									)}
 								</AnimatePresence>
-							</div>
+							</motion.div>
 						);
 					})}
 				</div>
