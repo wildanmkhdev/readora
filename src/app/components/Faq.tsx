@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react"; // Icon panah
 
 type FAQItem = {
 	pertanyaan: string;
@@ -48,40 +49,52 @@ export default function FAQ() {
 	};
 
 	return (
-		<section className="bg-gray-900 text-white w-full">
+		<section className="bg-gray-900 text-white w-full px-4 md:px-6 py-10">
 			<motion.div
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.6, ease: "easeOut" }}
 				viewport={{ once: true }}
-				className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
-				<h2 className="text-2xl md:text-3xl font-bold text-center pt-10 pb-6 text-purple-400">
+				className="max-w-3xl mx-auto">
+				<h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-purple-400">
 					Pertanyaan Yang Sering Diajukan (FAQ)
 				</h2>
-				<div className="space-y-2">
-					{dataFAQ.map((item, index) => (
-						<div key={index} className="border-t border-gray-700">
-							<button
-								onClick={() => toggle(index)}
-								className="w-full text-left py-4 text-sm md:text-base font-medium text-white flex justify-between items-center bg-gray-900 hover:bg-gray-800 transition">
-								<span>{item.pertanyaan}</span>
-								<span className="ml-4 text-xl">
-									{terbuka === index ? "-" : "+"}
-								</span>
-							</button>
-
+				<div className="space-y-3">
+					{dataFAQ.map((item, index) => {
+						const isOpen = terbuka === index;
+						return (
 							<div
-								className={`transition-all duration-300 ease-in-out overflow-hidden ${
-									terbuka === index ? "max-h-60 pb-4 bg-gray-900" : "max-h-0"
-								}`}>
-								<p className="text-sm md:text-base text-gray-300">
-									{item.jawaban}
-								</p>
+								key={index}
+								className="border border-gray-700 rounded-xl overflow-hidden bg-gray-800">
+								<button
+									onClick={() => toggle(index)}
+									className="w-full flex justify-between items-center px-5 py-4 text-left text-sm md:text-base font-medium transition hover:bg-gray-700">
+									<span className="text-white">{item.pertanyaan}</span>
+									<motion.div
+										animate={{ rotate: isOpen ? 180 : 0 }}
+										transition={{ duration: 0.3 }}>
+										<ChevronDown className="text-white w-5 h-5" />
+									</motion.div>
+								</button>
+								<AnimatePresence>
+									{isOpen && (
+										<motion.div
+											key="content"
+											initial={{ height: 0, opacity: 0 }}
+											animate={{ height: "auto", opacity: 1 }}
+											exit={{ height: 0, opacity: 0 }}
+											transition={{ duration: 0.3, ease: "easeInOut" }}
+											className="px-5 pb-4">
+											<p className="text-sm md:text-base text-gray-300">
+												{item.jawaban}
+											</p>
+										</motion.div>
+									)}
+								</AnimatePresence>
 							</div>
-						</div>
-					))}
+						);
+					})}
 				</div>
-				<div className="h-10" />
 			</motion.div>
 		</section>
 	);

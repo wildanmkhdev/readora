@@ -56,29 +56,30 @@ export default function Testimonials() {
 	}, []);
 
 	return (
-		<section className="bg-gray-900 py-10 overflow-hidden">
+		<section className="bg-gray-900 pt-8 pb-12 overflow-hidden">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-				<h2 className="text-xl md:text-2xl font-bold text-purple-400 text-center mb-6">
-					Apa Kata Pengguna Readora ?
+				<h2 className="text-xl md:text-2xl font-bold text-purple-400 text-center mb-10">
+					Apa Kata Pengguna Readora?
 				</h2>
 
 				<div className="relative w-full overflow-hidden">
-					<div className="flex animate-scroll space-x-6">
+					<div className="flex animate-scroll space-x-8">
 						{testimoni.map((item, index) => (
 							<div
 								key={index}
-								className="min-w-max bg-gray-800 rounded-xl p-4 text-white shadow-md w-56">
-								<div className="flex justify-center mb-3">
+								className="min-w-max w-72 sm:w-80 bg-gray-800 rounded-2xl p-6 text-white shadow-lg flex-shrink-0"
+							>
+								<div className="flex justify-center mb-4">
 									<img
 										src={item.foto}
 										alt={item.user}
-										className="w-12 h-12 rounded-full object-cover border-2 border-purple-400"
+										className="w-16 h-16 rounded-full object-cover border-4 border-purple-400"
 									/>
 								</div>
-								<p className="italic text-sm text-center text-gray-300">
+								<p className="italic text-base text-center text-gray-300 leading-relaxed">
 									"{item.komentar}"
 								</p>
-								<div className="mt-3 text-xs text-center text-purple-300">
+								<div className="mt-4 text-sm text-center text-purple-300 font-medium">
 									- {item.user}, {item.waktu}
 								</div>
 							</div>

@@ -28,10 +28,10 @@ const PopularBooks: React.FC = () => {
 	};
 
 	return (
-		<section className="bg-gray-900 px-4 py-12 sm:px-6 lg:px-20 text-white">
+		<section className="bg-gray-900 px-4 py-4 sm:px-6 lg:px-20 text-white">
 			<div className="mx-auto max-w-screen-xl">
 				<div className="mb-8 flex items-center justify-between">
-					<h2 className="text-xl font-bold sm:text-2xl md:text-3xl text-nowrap">
+					<h2 className="text-base font-bold sm:text-xl md:text-2xl text-nowrap">
 						Rekomendasi untuk Anda
 					</h2>
 					<Link
