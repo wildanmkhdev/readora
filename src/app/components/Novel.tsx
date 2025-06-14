@@ -30,7 +30,7 @@ const Novel: React.FC = () => {
 	return (
 		<section className="bg-gray-900 px-4 py-2 sm:px-6 lg:px-20 text-white">
 			<div className="mx-auto max-w-screen-xl">
-				<div className="mb-8 flex items-center justify-between">
+				<div className="mb-8 flex items-center justify-between px-1">
 					<h2 className="text-lg font-bold sm:text-xl pt-2 md:text-2xl">
 						Novel & Fiksi
 					</h2>

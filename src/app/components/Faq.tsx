@@ -49,7 +49,7 @@ export default function FAQ() {
 	};
 
 	return (
-		<section className="bg-gray-900 text-white w-full px-4 md:px-6 py-8">
+		<section className="bg-gray-900 text-white w-full px-4 md:px-6 py-0">
 			<div className="max-w-3xl mx-auto">
 				<h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-purple-400">
 					Pertanyaan Yang Sering Diajukan (FAQ)
