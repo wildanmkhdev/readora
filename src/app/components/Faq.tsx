@@ -52,7 +52,11 @@ const containerVariants = {
 
 const itemVariants = {
 	hidden: { opacity: 0, y: 20 },
-	visible: { opacity: 1, y: 0 },
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: { type: "spring", stiffness: 100, damping: 15 },
+	},
 };
 
 export default function FAQ() {
@@ -69,6 +73,7 @@ export default function FAQ() {
 				whileInView="visible"
 				viewport={{ once: true, amount: 0.2 }}
 				variants={containerVariants}
+				layoutScroll
 				className="max-w-3xl mx-auto">
 				<h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-purple-400">
 					Pertanyaan Yang Sering Diajukan (FAQ)
@@ -82,7 +87,8 @@ export default function FAQ() {
 								variants={itemVariants}
 								key={index}
 								layout
-								className="border border-gray-700 rounded-xl overflow-hidden bg-gray-800">
+								transition={{ layout: { duration: 0.4, ease: "easeInOut" } }}
+								className="border border-gray-700 rounded-xl bg-gray-800 overflow-hidden shadow-sm">
 								<button
 									onClick={() => toggle(index)}
 									className="w-full flex justify-between items-center px-5 py-4 text-left text-sm md:text-base font-medium transition hover:bg-gray-700">
@@ -97,14 +103,21 @@ export default function FAQ() {
 								<AnimatePresence initial={false}>
 									{isOpen && (
 										<motion.div
-											initial={{ opacity: 0, height: 0 }}
-											animate={{ opacity: 1, height: "auto" }}
-											exit={{ opacity: 0, height: 0 }}
-											transition={{ duration: 0.35, ease: "easeInOut" }}
-											className="px-5 pb-4 overflow-hidden">
-											<p className="text-sm md:text-base text-gray-300">
+											key="content"
+											initial={{ opacity: 0 }}
+											animate={{ opacity: 1 }}
+											exit={{ opacity: 0 }}
+											transition={{ duration: 0.25 }}
+											className="px-5 pb-4"
+											layout>
+											<motion.p
+												initial={{ y: 10, opacity: 0 }}
+												animate={{ y: 0, opacity: 1 }}
+												exit={{ y: 10, opacity: 0 }}
+												transition={{ duration: 0.3, ease: "easeOut" }}
+												className="text-sm md:text-base text-gray-300">
 												{item.jawaban}
-											</p>
+											</motion.p>
 										</motion.div>
 									)}
 								</AnimatePresence>
