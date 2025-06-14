@@ -41,24 +41,6 @@ const dataFAQ: FAQItem[] = [
 	},
 ];
 
-const containerVariants = {
-	hidden: {},
-	visible: {
-		transition: {
-			staggerChildren: 0.1,
-		},
-	},
-};
-
-const itemVariants = {
-	hidden: { opacity: 0, y: 20 },
-	visible: {
-		opacity: 1,
-		y: 0,
-		transition: { type: "spring", stiffness: 100, damping: 15 },
-	},
-};
-
 export default function FAQ() {
 	const [terbuka, setTerbuka] = useState<number | null>(null);
 
@@ -67,14 +49,8 @@ export default function FAQ() {
 	};
 
 	return (
-		<section className="bg-gray-900 text-white w-full px-4 md:px-6 py-0">
-			<motion.div
-				initial="hidden"
-				whileInView="visible"
-				viewport={{ once: true, amount: 0.2 }}
-				variants={containerVariants}
-				layoutScroll
-				className="max-w-3xl mx-auto">
+		<section className="bg-gray-900 text-white w-full px-4 md:px-6 py-8">
+			<div className="max-w-3xl mx-auto">
 				<h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-purple-400">
 					Pertanyaan Yang Sering Diajukan (FAQ)
 				</h2>
@@ -83,49 +59,42 @@ export default function FAQ() {
 						const isOpen = terbuka === index;
 
 						return (
-							<motion.div
-								variants={itemVariants}
+							<div
 								key={index}
-								layout
-								transition={{ layout: { duration: 0.4, ease: "easeInOut" } }}
-								className="border border-gray-700 rounded-xl bg-gray-800 overflow-hidden shadow-sm">
+								className="border border-gray-700 rounded-xl bg-gray-800 shadow-sm">
 								<button
 									onClick={() => toggle(index)}
-									className="w-full flex justify-between items-center px-5 py-4 text-left text-sm md:text-base font-medium transition hover:bg-gray-700">
+									className="w-full flex justify-between items-center px-5 py-4 text-left text-sm md:text-base font-medium transition-colors duration-200 hover:bg-gray-700 rounded-xl">
 									<span>{item.pertanyaan}</span>
 									<motion.div
 										animate={{ rotate: isOpen ? 180 : 0 }}
-										transition={{ duration: 0.3 }}>
-										<ChevronDown className="w-5 h-5" />
+										transition={{ duration: 0.2, ease: "easeInOut" }}>
+										<ChevronDown className="w-5 h-5 flex-shrink-0 ml-2" />
 									</motion.div>
 								</button>
 
-								<AnimatePresence initial={false}>
-									{isOpen && (
-										<motion.div
-											key="content"
-											initial={{ opacity: 0 }}
-											animate={{ opacity: 1 }}
-											exit={{ opacity: 0 }}
-											transition={{ duration: 0.25 }}
-											className="px-5 pb-4"
-											layout>
-											<motion.p
-												initial={{ y: 10, opacity: 0 }}
-												animate={{ y: 0, opacity: 1 }}
-												exit={{ y: 10, opacity: 0 }}
-												transition={{ duration: 0.3, ease: "easeOut" }}
-												className="text-sm md:text-base text-gray-300">
-												{item.jawaban}
-											</motion.p>
-										</motion.div>
-									)}
-								</AnimatePresence>
-							</motion.div>
+								<motion.div
+									initial={false}
+									animate={{
+										height: isOpen ? "auto" : 0,
+										opacity: isOpen ? 1 : 0,
+									}}
+									transition={{
+										height: { duration: 0.3, ease: "easeInOut" },
+										opacity: { duration: 0.2, ease: "easeInOut" },
+									}}
+									className="overflow-hidden">
+									<div className="px-5 pb-4">
+										<p className="text-sm md:text-base text-gray-300 leading-relaxed">
+											{item.jawaban}
+										</p>
+									</div>
+								</motion.div>
+							</div>
 						);
 					})}
 				</div>
-			</motion.div>
+			</div>
 		</section>
 	);
 }
