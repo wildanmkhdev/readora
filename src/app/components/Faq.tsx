@@ -49,7 +49,7 @@ export default function FAQ() {
 	};
 
 	return (
-		<section className="bg-gray-900 text-white w-full px-4 md:px-6 py-10">
+		<section className="bg-gray-900 text-white w-full px-4 md:px-6 py-0">
 			<motion.div
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}
