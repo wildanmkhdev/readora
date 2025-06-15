@@ -9,6 +9,7 @@ interface TrueFocusProps {
 	glowColor?: string;
 	animationDuration?: number;
 	pauseBetweenAnimations?: number;
+	className?: string;
 }
 
 interface FocusRect {
@@ -21,6 +22,7 @@ interface FocusRect {
 const TrueFocus: React.FC<TrueFocusProps> = ({
 	sentence = "Welcome To BookVerse",
 	manualMode = false,
+	className = "",
 	blurAmount = 5,
 	borderColor = "green",
 	glowColor = "rgba(0, 255, 0, 0.6)",

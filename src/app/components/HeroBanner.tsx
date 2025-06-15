@@ -12,7 +12,7 @@ const HeroBanner: React.FC = () => {
 	};
 
 	return (
-		<section className="bg-gray-900 px-4 py-12 sm:py-16 md:py-20 text-white sm:px-6 md:px-10 lg:px-16">
+		<section className="bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 px-4 py-12 sm:py-16 md:py-20 text-white sm:px-6 md:px-10 lg:px-16">
 			<motion.div
 				initial={{ opacity: 0, y: 40 }}
 				animate={{ opacity: 1, y: 0 }}
@@ -31,6 +31,7 @@ const HeroBanner: React.FC = () => {
 						glowColor="rgba(59, 130, 246, 0.6)"
 						animationDuration={0.5}
 						pauseBetweenAnimations={1}
+						className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
 					/>
 				</motion.h1>
 
@@ -52,10 +53,10 @@ const HeroBanner: React.FC = () => {
 					className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 pt-4 w-full px-4">
 					<button
 						onClick={handleScroll}
-						className="w-full sm:w-auto rounded-2xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700">
+						className="w-full sm:w-auto rounded-2xl bg-blue-600 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105 active:scale-95">
 						Mulai Membaca
 					</button>
-					<button className="w-full sm:w-auto rounded-2xl border border-white px-6 py-3 font-semibold text-white transition hover:bg-white/10">
+					<button className="w-full sm:w-auto rounded-2xl border border-white px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:scale-105 active:scale-95">
 						Jelajahi Koleksi
 					</button>
 				</motion.div>
