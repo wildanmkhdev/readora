@@ -71,8 +71,8 @@ export default function Testimonials() {
 	const [testimoni, setTestimoni] = useState<Testimoni[]>([]);
 
 	useEffect(() => {
-		// Gandakan 3x agar animasi scroll lebih panjang dan smooth
-		setTestimoni([...sampleData, ...sampleData, ...sampleData]);
+		// Gandakan 4x agar animasi scroll lebih panjang dan smooth di mobile
+		setTestimoni([...sampleData, ...sampleData, ...sampleData, ...sampleData]);
 	}, []);
 
 	return (
@@ -83,12 +83,12 @@ export default function Testimonials() {
 						transform: translateX(0);
 					}
 					100% {
-						transform: translateX(-50%);
+						transform: translateX(-33.333%);
 					}
 				}
 
 				.animate-scroll-left {
-					animation: scroll-left 30s linear infinite;
+					animation: scroll-left 40s linear infinite;
 				}
 
 				.animate-scroll-left:hover {
@@ -98,7 +98,7 @@ export default function Testimonials() {
 				/* Mobile First Responsive Design */
 				@media (max-width: 480px) {
 					.animate-scroll-left {
-						animation: scroll-left 15s linear infinite;
+						animation: scroll-left 25s linear infinite;
 					}
 
 					.testimonial-card {
@@ -129,7 +129,7 @@ export default function Testimonials() {
 
 				@media (min-width: 481px) and (max-width: 768px) {
 					.animate-scroll-left {
-						animation: scroll-left 20s linear infinite;
+						animation: scroll-left 30s linear infinite;
 					}
 
 					.testimonial-card {
@@ -140,7 +140,7 @@ export default function Testimonials() {
 
 				@media (min-width: 769px) and (max-width: 1024px) {
 					.animate-scroll-left {
-						animation: scroll-left 25s linear infinite;
+						animation: scroll-left 35s linear infinite;
 					}
 
 					.testimonial-card {
@@ -166,9 +166,16 @@ export default function Testimonials() {
 						transform: none !important;
 					}
 				}
+
+				/* Smooth scrolling container */
+				.scroll-container {
+					will-change: transform;
+					backface-visibility: hidden;
+					perspective: 1000px;
+				}
 			`}</style>
 
-			<section className="bg-gradient-to-br from-gray-900 via-gray-800 to-black py-8 sm:py-12 lg:py-16 overflow-hidden">
+			<section className="bg-gray-900 py-8 sm:py-12 lg:py-16 overflow-hidden">
 				<div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
 					<div className="text-center mb-8 sm:mb-10 lg:mb-12">
 						<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-transparent leading-tight">
@@ -185,7 +192,7 @@ export default function Testimonials() {
 						<div className="absolute left-0 top-0 h-full w-8 sm:w-12 lg:w-20 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none"></div>
 						<div className="absolute right-0 top-0 h-full w-8 sm:w-12 lg:w-20 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none"></div>
 
-						<div className="flex animate-scroll-left space-x-4 sm:space-x-6">
+						<div className="flex animate-scroll-left space-x-4 sm:space-x-6 scroll-container">
 							{testimoni.map((item, index) => (
 								<div
 									key={index}
