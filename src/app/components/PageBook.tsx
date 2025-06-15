@@ -27,7 +27,7 @@ const PopularBooks: React.FC = () => {
 	};
 
 	return (
-		<section className="bg-gray-900 px-4 py-4 sm:px-6 lg:px-20 text-white">
+		<section className="bg-gray-900 px-4 py-4 sm:px-6 lg:px-20 text-white" id="populer">
 			<div className="mx-auto max-w-screen-xl">
 				<div className="mb-8 flex items-center justify-between">
 					<h2 className="text-lg font-bold sm:text-xl md:text-2xl">
