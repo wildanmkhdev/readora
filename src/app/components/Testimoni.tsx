@@ -178,7 +178,7 @@ export default function Testimonials() {
 				}
 			`}</style>
 
-			<section className="bg-gray-900 py-4 sm:py-4 lg:py-6 overflow-hidden">
+			<section className="bg-gray-900 py-7 sm:py-8 lg:py-6 overflow-hidden">
 				<div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
 					<div className="text-center mb-8 sm:mb-10 lg:mb-12">
 						<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-transparent leading-tight">

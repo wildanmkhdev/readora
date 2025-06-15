@@ -31,7 +31,7 @@ const HeroBanner: React.FC = () => {
 						glowColor="rgba(59, 130, 246, 0.6)"
 						animationDuration={0.6}
 						pauseBetweenAnimations={1}
-						className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-[2.5rem] sm:text-[5rem] md:text-[4rem] lg:text-[4.5rem]"
+						className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-[3rem] sm:text-[7rem] md:text-[4rem] lg:text-[4.5rem]"
 					/>
 				</motion.h1>
 
