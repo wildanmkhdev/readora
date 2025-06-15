@@ -106,7 +106,7 @@ export default function FAQ() {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true, amount: 0.3 }}
-					className="text-2xl md:text-3xl font-bold text-center mb-8 text-purple-400">
+					className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
 					Pertanyaan Yang Sering Diajukan (FAQ)
 				</motion.h2>
 
