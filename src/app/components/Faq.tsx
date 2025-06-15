@@ -99,7 +99,7 @@ export default function FAQ() {
 	};
 
 	return (
-		<section className="bg-gray-900 text-white w-full px-4 md:px-6 py-16">
+		<section className="bg-gray-900 text-white w-full px-4 md:px-6 py-4">
 			<div className="max-w-3xl mx-auto">
 				<motion.h2
 					variants={titleVariants}
