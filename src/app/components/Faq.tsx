@@ -10,34 +10,34 @@ type FAQItem = {
 
 const dataFAQ: FAQItem[] = [
 	{
-		pertanyaan: "Bagaimana cara membeli akses ke cerita premium?",
+		pertanyaan: "Apa itu Readora?",
 		jawaban:
-			"Kamu bisa membeli akses dengan menggunakan kredit. Kredit dapat dibeli melalui berbagai metode pembayaran seperti e-wallet, transfer bank, atau kartu kredit.",
+			"Readora adalah platform toko buku digital karya anak bangsa yang memungkinkan siapa saja membaca dan membeli buku hanya dengan bermodalkan internet. Tujuannya adalah memberi akses pengetahuan yang merata ke seluruh pelosok Indonesia.",
 	},
 	{
-		pertanyaan: "Apa itu sistem koin di Readora?",
+		pertanyaan: "Bagaimana cara membeli buku di Readora?",
 		jawaban:
-			"Sistem koin digunakan untuk membuka bab premium pada cerita tertentu. 1 koin setara dengan 1 bab yang bisa kamu baca.",
+			"Kamu bisa memilih buku yang diinginkan, lalu klik tombol 'Beli'. Untuk pembelian, kamu akan diarahkan ke WhatsApp admin Readora yang akan memandu proses transaksi dan pengiriman akses baca.",
 	},
 	{
-		pertanyaan: "Apakah saya harus login untuk membeli akses?",
+		pertanyaan: "Bagaimana cara menjadi penulis di Readora?",
 		jawaban:
-			"Ya, kamu harus login terlebih dahulu agar kredit yang kamu beli tersimpan di akun dan bisa digunakan membaca cerita.",
+			"Untuk menjadi penulis, kamu hanya perlu menghubungi admin Readora lewat WhatsApp. Kamu akan dibantu untuk mendaftar dan diberikan akses login untuk mengunggah bukumu sendiri ke platform.",
 	},
 	{
-		pertanyaan: "Apakah cerita yang sudah dibuka bisa dibaca ulang?",
+		pertanyaan: "Bagaimana Readora bisa menjadi toko buku online terbaik?",
 		jawaban:
-			"Tentu! Semua cerita yang sudah kamu beli aksesnya bisa kamu baca ulang kapan saja tanpa membayar lagi.",
+			"Readora hadir bukan sekadar sebagai toko buku, tapi sebagai gerakan literasi digital. Dengan mendukung penulis lokal, menyediakan akses mudah ke bacaan berkualitas, dan menjangkau pembaca di seluruh pelosok negeri, Readora turut mewujudkan Indonesia Emas 2045 — bangsa yang cerdas, berdaya, dan haus akan pengetahuan.",
 	},
 	{
-		pertanyaan: "Apakah saya bisa meminta refund jika salah beli?",
+		pertanyaan: "Apakah saya bisa menjadi Key Partner Readora?",
 		jawaban:
-			"Sayangnya, transaksi yang sudah dilakukan tidak bisa dikembalikan. Harap pastikan sebelum melakukan pembelian.",
+			"Tentu bisa! Kamu bisa menjadi partner Readora sebagai penulis, reseller buku, reviewer, atau pengembang komunitas baca di daerahmu. Kami membuka kolaborasi seluas-luasnya untuk memajukan literasi digital bersama.",
 	},
 	{
-		pertanyaan: "Bagaimana jika kredit saya tidak masuk?",
+		pertanyaan: "Siapa pencipta Readora?",
 		jawaban:
-			"Silakan hubungi tim support Readora melalui menu bantuan di aplikasi atau kirim email ke support@readora.id.",
+			"Readora dibuat oleh anak muda Indonesia yang memiliki visi besar: membangun negeri lewat akses pengetahuan yang inklusif. Didorong oleh semangat perubahan, Readora ingin menjadi jembatan literasi bagi semua kalangan, dari kota hingga desa.",
 	},
 ];
 
