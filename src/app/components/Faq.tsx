@@ -41,6 +41,56 @@ const dataFAQ: FAQItem[] = [
 	},
 ];
 
+// Container animation variants
+const containerVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.1, // Delay antar item
+			delayChildren: 0.2, // Delay sebelum mulai animasi children
+		},
+	},
+};
+
+// Item animation variants
+const itemVariants = {
+	hidden: {
+		opacity: 0,
+		y: 30,
+		scale: 0.95,
+	},
+	visible: {
+		opacity: 1,
+		y: 0,
+		scale: 1,
+		transition: {
+			type: "spring",
+			stiffness: 100,
+			damping: 12,
+			duration: 0.6,
+		},
+	},
+};
+
+// Title animation variant
+const titleVariants = {
+	hidden: {
+		opacity: 0,
+		y: -20,
+	},
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			type: "spring",
+			stiffness: 100,
+			damping: 10,
+			duration: 0.8,
+		},
+	},
+};
+
 export default function FAQ() {
 	const [terbuka, setTerbuka] = useState<number | null>(null);
 
@@ -49,26 +99,45 @@ export default function FAQ() {
 	};
 
 	return (
-		<section className="bg-gray-900 text-white w-full px-4 md:px-6 py-0">
+		<section className="bg-gray-900 text-white w-full px-4 md:px-6 py-16">
 			<div className="max-w-3xl mx-auto">
-				<h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-purple-400">
+				<motion.h2
+					variants={titleVariants}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.3 }}
+					className="text-2xl md:text-3xl font-bold text-center mb-8 text-purple-400">
 					Pertanyaan Yang Sering Diajukan (FAQ)
-				</h2>
-				<div className="space-y-3">
+				</motion.h2>
+
+				<motion.div
+					variants={containerVariants}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.2 }}
+					className="space-y-3">
 					{dataFAQ.map((item, index) => {
 						const isOpen = terbuka === index;
 
 						return (
-							<div
+							<motion.div
 								key={index}
+								variants={itemVariants}
+								whileHover={{
+									scale: 1.02,
+									transition: { duration: 0.2 },
+								}}
 								className="border border-gray-700 rounded-xl bg-gray-800 shadow-sm">
 								<button
 									onClick={() => toggle(index)}
-									className="w-full flex justify-between items-center px-5 py-4 text-left text-sm md:text-base font-medium transition-colors duration-200 hover:bg-gray-700 rounded-xl">
-									<span>{item.pertanyaan}</span>
+									className="w-full flex justify-between items-center px-5 py-4 text-left text-sm md:text-base font-medium transition-all duration-300 hover:bg-gray-700 rounded-xl group">
+									<span className="group-hover:text-purple-300 transition-colors duration-200">
+										{item.pertanyaan}
+									</span>
 									<motion.div
 										animate={{ rotate: isOpen ? 180 : 0 }}
-										transition={{ duration: 0.2, ease: "easeInOut" }}>
+										transition={{ duration: 0.3, ease: "easeInOut" }}
+										className="group-hover:text-purple-300 transition-colors duration-200">
 										<ChevronDown className="w-5 h-5 flex-shrink-0 ml-2" />
 									</motion.div>
 								</button>
@@ -80,20 +149,29 @@ export default function FAQ() {
 										opacity: isOpen ? 1 : 0,
 									}}
 									transition={{
-										height: { duration: 0.3, ease: "easeInOut" },
-										opacity: { duration: 0.2, ease: "easeInOut" },
+										height: { duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] },
+										opacity: { duration: 0.3, ease: "easeInOut" },
 									}}
 									className="overflow-hidden">
-									<div className="px-5 pb-4">
+									<motion.div
+										initial={false}
+										animate={{
+											y: isOpen ? 0 : -10,
+										}}
+										transition={{
+											duration: 0.3,
+											ease: "easeOut",
+										}}
+										className="px-5 pb-4">
 										<p className="text-sm md:text-base text-gray-300 leading-relaxed">
 											{item.jawaban}
 										</p>
-									</div>
+									</motion.div>
 								</motion.div>
-							</div>
+							</motion.div>
 						);
 					})}
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);
