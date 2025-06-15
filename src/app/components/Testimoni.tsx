@@ -71,7 +71,6 @@ export default function Testimonials() {
 	const [testimoni, setTestimoni] = useState<Testimoni[]>([]);
 
 	useEffect(() => {
-		// Gandakan 4x agar animasi scroll lebih panjang dan smooth di mobile
 		setTestimoni([...sampleData, ...sampleData, ...sampleData, ...sampleData]);
 	}, []);
 
@@ -95,7 +94,6 @@ export default function Testimonials() {
 					animation-play-state: paused;
 				}
 
-				/* Mobile First Responsive Design */
 				@media (max-width: 480px) {
 					.animate-scroll-left {
 						animation: scroll-left 25s linear infinite;
@@ -144,19 +142,25 @@ export default function Testimonials() {
 					}
 
 					.testimonial-card {
-						width: 350px !important;
-						min-width: 350px !important;
+						width: 340px !important;
+						min-width: 340px !important;
 					}
 				}
 
-				@media (min-width: 1025px) {
+				@media (min-width: 1025px) and (max-width: 1440px) {
 					.testimonial-card {
-						width: 380px !important;
-						min-width: 380px !important;
+						width: 320px !important;
+						min-width: 320px !important;
 					}
 				}
 
-				/* Touch device optimizations */
+				@media (min-width: 1441px) {
+					.testimonial-card {
+						width: 360px !important;
+						min-width: 360px !important;
+					}
+				}
+
 				@media (hover: none) and (pointer: coarse) {
 					.animate-scroll-left:hover {
 						animation-play-state: running;
@@ -167,7 +171,6 @@ export default function Testimonials() {
 					}
 				}
 
-				/* Smooth scrolling container */
 				.scroll-container {
 					will-change: transform;
 					backface-visibility: hidden;
@@ -188,15 +191,11 @@ export default function Testimonials() {
 					</div>
 
 					<div className="relative w-full overflow-hidden">
-						{/* Gradient fade untuk efek smooth di kiri-kanan */}
-						<div className="absolute left-0 top-0 h-full w-8 sm:w-12 lg:w-20 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none"></div>
-						<div className="absolute right-0 top-0 h-full w-8 sm:w-12 lg:w-20 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none"></div>
-
 						<div className="flex animate-scroll-left space-x-4 sm:space-x-6 scroll-container">
 							{testimoni.map((item, index) => (
 								<div
 									key={index}
-									className="testimonial-card min-w-max w-80 sm:w-96 bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white shadow-2xl flex-shrink-0 border border-gray-600 hover:border-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-purple-500/20">
+									className="testimonial-card min-w-max bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white shadow-2xl flex-shrink-0 border border-gray-600 hover:border-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-purple-500/20">
 									<div className="flex justify-center mb-4 sm:mb-6">
 										<div className="relative">
 											<img
@@ -210,7 +209,6 @@ export default function Testimonials() {
 
 									<div className="text-center">
 										<div className="mb-4">
-											{/* Tech badges */}
 											<div className="flex justify-center mb-3">
 												<div className="flex space-x-1">
 													<span className="tech-badge px-2 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">
@@ -254,7 +252,6 @@ export default function Testimonials() {
 						</div>
 					</div>
 
-					{/* CTA Section */}
 					<div className="text-center mt-8 sm:mt-10 lg:mt-12">
 						<div className="mb-4 sm:mb-6">
 							<div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-6 lg:space-x-8 text-xs sm:text-sm text-gray-400 mb-4 sm:mb-6">
