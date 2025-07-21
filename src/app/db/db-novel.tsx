@@ -16,7 +16,7 @@ export const books: Book[] = [
 		price: 20000,
 		genre: "fiksi",
 		coverImage:
-			"https://scontent.fkno9-2.fna.fbcdn.net/v/t39.30808-6/506592603_1636808353646394_5822524021560618689_n.jpg?stp=dst-jpg_p370x247_tt6&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFTpCH9PS1NVAIBnb8IBNQ3zdt4Djbj8krN23gONuPyStrDQEb6CrxJquSDX23h5wUQw0c5DZrdkrxoaJ4IBUuC&_nc_ohc=ab0kYe0w-UQQ7kNvwFI4mWH&_nc_oc=Adnb5floQIF6aFmD8ODLwwP-iIey_3e7skbl5LdF4l2YyM7dtmYeqsQ1u8dnWjh5tIk&_nc_zt=23&_nc_ht=scontent.fkno9-2.fna&_nc_gid=PnjNF2xrhVMKcSN3CJpO-A&oh=00_AfN10rMRSlAEpzTxH_d0Z_FVewtS-1VZKChTu-_3pTRtTQ&oe=6850D3FC",
+			"https://scontent.fcgk12-2.fna.fbcdn.net/v/t39.30808-6/506592603_1636808353646394_5822524021560618689_n.jpg?stp=dst-jpg_p370x247_tt6&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFTpCH9PS1NVAIBnb8IBNQ3zdt4Djbj8krN23gONuPyStrDQEb6CrxJquSDX23h5wUQw0c5DZrdkrxoaJ4IBUuC&_nc_ohc=lCQy8MgrhxAQ7kNvwFqERKI&_nc_oc=AdkKFSaY61aKG9MDFgkK1rMefiSi8SpZ_M54N3zB-t8es-5hK0WZh6OA2tyTVGXbxCc&_nc_zt=23&_nc_ht=scontent.fcgk12-2.fna&_nc_gid=T0TSanu_CN3ThcwyXZE-3w&oh=00_AfS3Q1oyDod7oUee0Vp5hT6X1HRKHB2V4U8yKQL_tLqnlw&oe=68835D7C",
 		purchaseUrl: "https://example.com/book5",
 	},
 	{
@@ -26,7 +26,7 @@ export const books: Book[] = [
 		price: 11000,
 		genre: "fiksi",
 		coverImage:
-			"https://scontent.fkno9-1.fna.fbcdn.net/v/t39.30808-6/506448217_1636808380313058_5139545280777872080_n.jpg?stp=dst-jpg_p370x247_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEBWrWQmdNH01XGlYaSK0mIe1zgjBZ8LGF7XOCMFnwsYRwFA5mwlvYdGFVS2EgU6KHk8BEAQvwJmtC8ac74gmJ3&_nc_ohc=PLrSqzBTH9AQ7kNvwFMHgvt&_nc_oc=AdlcUP3T96fJLtBn6IxoWh9VvTcpHsTDgwjBlMiBpdMIMDsjHgbzoC5-eLRaLX5_Uh0&_nc_zt=23&_nc_ht=scontent.fkno9-1.fna&_nc_gid=PnjNF2xrhVMKcSN3CJpO-A&oh=00_AfNRljRC34z7EglfPPZcirKOdSEgTMycm9vD6wevFHlZMw&oe=6850B2FE",
+			"https://scontent.fcgk12-1.fna.fbcdn.net/v/t39.30808-6/506448217_1636808380313058_5139545280777872080_n.jpg?stp=dst-jpg_p370x247_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEBWrWQmdNH01XGlYaSK0mIe1zgjBZ8LGF7XOCMFnwsYRwFA5mwlvYdGFVS2EgU6KHk8BEAQvwJmtC8ac74gmJ3&_nc_ohc=aTZd1N7fQTYQ7kNvwFQ3jgK&_nc_oc=AdkZZvV0iJj45GI_jgHc227LC-XOOeHDqWSrLFsHJwNR5iNtQPi-gtor-yvdiNDHw6w&_nc_zt=23&_nc_ht=scontent.fcgk12-1.fna&_nc_gid=ojKCIc3lR5uELGyL-j3bOQ&oh=00_AfQZRf_tcHAvT6rFn3lyylGh63J_6nRsjmgOmg2dqPSClg&oe=688374BE",
 		purchaseUrl: "https://example.com/book5",
 	},
 	{
@@ -36,7 +36,7 @@ export const books: Book[] = [
 		price: 12000,
 		genre: "fiksi",
 		coverImage:
-			"https://scontent.fkno9-2.fna.fbcdn.net/v/t39.30808-6/506641217_1636808366979726_5178393458480270854_n.jpg?stp=dst-jpg_p370x247_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGMNwKI1JGN2Lp1AS7kPI8mkuCgEf0wC_eS4KAR_TAL9_V-ZSlSiqEIsM59PfZStTv-AL7XVYkrLgY5Z9YKx89Q&_nc_ohc=s7FscTOxz34Q7kNvwGygj0m&_nc_oc=AdkHA5L43XkYlE77afQ_XcB96ijkyZkLxE06Cflsm1biaurvDeUMYlxRFr96zBVQ3Pw&_nc_zt=23&_nc_ht=scontent.fkno9-2.fna&_nc_gid=PnjNF2xrhVMKcSN3CJpO-A&oh=00_AfMAXLvqumwlhRB34pDTlnwKzKKO3D-c36hoASmABrX8ew&oe=6850A90E",
+			"https://scontent.fcgk12-1.fna.fbcdn.net/v/t39.30808-6/506641217_1636808366979726_5178393458480270854_n.jpg?stp=dst-jpg_p370x247_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGMNwKI1JGN2Lp1AS7kPI8mkuCgEf0wC_eS4KAR_TAL9_V-ZSlSiqEIsM59PfZStTv-AL7XVYkrLgY5Z9YKx89Q&_nc_ohc=PSZ1qkL0gYoQ7kNvwF7bQ6S&_nc_oc=Adn75L6vJRhBUZqSggZOZlL8lDQLOk2_DNr66_Z8pU08_3ngnp75qmFYsNb1iq3LcvY&_nc_zt=23&_nc_ht=scontent.fcgk12-1.fna&_nc_gid=ojKCIc3lR5uELGyL-j3bOQ&oh=00_AfRKr0db3jVjD5-wjkM64U59i2JYxUyV6NvYjMFz6TPZoQ&oe=68836ACE",
 		purchaseUrl: "https://example.com/book5",
 	},
 	{
@@ -46,7 +46,7 @@ export const books: Book[] = [
 		price: 12000,
 		genre: "fiksi",
 		coverImage:
-			"https://scontent.fkno9-3.fna.fbcdn.net/v/t39.30808-6/506855235_1636808426979720_7545413662727369258_n.jpg?stp=dst-jpg_p370x247_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEWvRMJS4rDmZLuCsaABJZwxRpRr6OrdErFGlGvo6t0SpuWlPfvbDtWbDB3fQonigXEE3JpWseLyyUkkMRSpFvG&_nc_ohc=G_G0ZcM8u-gQ7kNvwGnIUj3&_nc_oc=AdmfN0kVbjlBHJzVfGWjmygihvW2P3vznYLaLeakqgvLHhUZqeL68VB8ri9PUR_F6Zo&_nc_zt=23&_nc_ht=scontent.fkno9-3.fna&_nc_gid=PnjNF2xrhVMKcSN3CJpO-A&oh=00_AfM-HP9g0hxf0oIflMr430FGRf0FSp22fGGqbWS-xWlrJw&oe=6850CA01",
+			"https://scontent.fcgk12-1.fna.fbcdn.net/v/t39.30808-6/506855235_1636808426979720_7545413662727369258_n.jpg?stp=dst-jpg_p370x247_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEWvRMJS4rDmZLuCsaABJZwxRpRr6OrdErFGlGvo6t0SpuWlPfvbDtWbDB3fQonigXEE3JpWseLyyUkkMRSpFvG&_nc_ohc=j5RUnN5V66QQ7kNvwE-oYc7&_nc_oc=Adl89hCkImrp5ouCQ7GQISJpXkKqnD0rhMrbriEcXVjKeEx0a53ER6F7z4m3uCpdaNs&_nc_zt=23&_nc_ht=scontent.fcgk12-1.fna&_nc_gid=ojKCIc3lR5uELGyL-j3bOQ&oh=00_AfQ67im069CgTR1HvF1a1N9xtJNaX-wUU0GNGvf3Ug-NFA&oe=68838BC1",
 		purchaseUrl: "https://example.com/book5",
 	},
 ];
