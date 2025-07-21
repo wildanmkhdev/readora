@@ -18,7 +18,7 @@ const books: Book[] = [
 		price: 45000,
 		genre: "",
 		coverImage:
-			"https://scontent.fcgk12-2.fna.fbcdn.net/v/t39.30808-6/506354431_1636063523720877_1776621881405594104_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFY74egRr-N3k70rqyE3hjGe1S-t1qe4K17VL63Wp7grWLnHrAa0t0PqiY7uxaMCZDKDNWsgrr9UohkYaLmR4Aw&_nc_ohc=ZUdngSW9ihMQ7kNvwErN5zz&_nc_oc=AdmKrEqhqmRuDpXGTlPLcyavWV8aCC2j0_Ywfx-GiQJ1FsBml9jY5oO1FORy_luK4VY&_nc_zt=23&_nc_ht=scontent.fcgk12-2.fna&_nc_gid=vEJlWrwW9griwQW0Bz16Cw&oh=00_AfRyEWBTwzT7n6n8VBEH9WcwSkplwzPghpV1BXEMnG1QhQ&oe=68837E7A",
+			"https://storage.googleapis.com/tess11111/mengenal%20dunia%20bitcoin.jpg",
 		purchaseUrl: "https://lynk.id/wildan_mukhaladun/4vr3zze6dx40",
 	},
 	{
